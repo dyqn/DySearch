@@ -53,12 +53,21 @@ export async function handleExtractRequest(message) {
     // 状态条（"搜索到 15 个网页"）单独成行时会被上面过滤掉，user 轮次就空了；
     // 这时用父页传来的真实提问补位，比把状态条当用户问题导出更贴近事实。
     const query = String(message.query || "").trim();
-    let turns = stripChromeFromTurns(rawTurns);
-    const firstUser = turns && turns.find((t) => t.role === "user");
-    if (query && !firstUser) {
-      turns = [{ role: "user", text: query }, ...(turns || [])];
-    } else if (query && firstUser && firstUser.text.length < 40 && !firstUser.text.includes(query.slice(0, 12))) {
-      firstUser.text = query;
+    let turns = stripChromeFromTurns(rawTurns) || [];
+    const hasAssistantText = turns.some(
+      (t) => t.role !== "user" && String(t.text || "").trim()
+    );
+    // 只有真的拿到 AI 正文时才保留 turns。否则宁可回空数组：
+    // 下游（导出/总结）见 turns 非空就只用它，会把已经抓到的平铺 content 整段丢掉。
+    if (hasAssistantText) {
+      const firstUser = turns.find((t) => t.role === "user");
+      if (query && !firstUser) {
+        turns = [{ role: "user", text: query }, ...turns];
+      } else if (query && firstUser && firstUser.text.length < 40 && !firstUser.text.includes(query.slice(0, 12))) {
+        firstUser.text = query;
+      }
+    } else {
+      turns = [];
     }
 
     window.parent.postMessage(

@@ -131,19 +131,39 @@ export function getActiveAiSummaryBaseUrl(settings) {
  * Returns null when there is no useful content.
  */
 export function buildSummaryInput(responses, query) {
-  const valid = (responses || []).filter((r) => {
+  const usable = [];
+  const missing = [];
+
+  for (const r of Array.isArray(responses) ? responses : []) {
+    const siteName = String(r?.siteName || "").trim() || "未知站点";
     const content = String(r?.content || "").trim();
-    return content && content !== "暂未提取到内容";
-  });
-  if (valid.length === 0) return null;
+    const turns = Array.isArray(r?.turns) ? r.turns : [];
+    const hasAssistantTurn = turns.some(
+      (t) => t.role !== "user" && String(t.text || "").trim()
+    );
+    const body = hasAssistantTurn
+      ? turns.map((turn) => `${turn.role === "user" ? "User" : "AI"}: ${turn.text}`).join("\n\n")
+      : (content && content !== "暂未提取到内容" ? content : "");
+    if (String(body || "").trim()) {
+      usable.push({ siteName, url: r?.url, body: String(body).trim() });
+    } else {
+      missing.push(siteName);
+    }
+  }
+  if (usable.length === 0) return null;
 
   const parts = [];
   if (query) parts.push(`用户问题：${query}\n`);
-  valid.forEach((r, i) => {
-    const turns = Array.isArray(r.turns) && r.turns.length > 0
-      ? r.turns.map((turn) => `${turn.role === "user" ? "User" : "AI"}: ${turn.text}`).join("\n\n")
-      : r.content;
-    parts.push(`=== 模型 ${i + 1}：${r.siteName} ===\nURL: ${r.url || ""}\n\n${turns}`);
+  // 明确告诉模型哪些卡片没有正文，否则它会花大段篇幅解释"其他模型未提供内容"，
+  // 甚至替它们编造观点。
+  if (missing.length > 0) {
+    parts.push(
+      `（本次共 ${usable.length + missing.length} 个模型，其中 ${missing.join("、")} 没有取到回答正文，` +
+      `请完全忽略它们，不要提及缺失、不要替它们编造内容。）`
+    );
+  }
+  usable.forEach((item, i) => {
+    parts.push(`=== 模型 ${i + 1}：${item.siteName} ===\nURL: ${item.url || ""}\n\n${item.body}`);
   });
   return parts.join("\n\n");
 }

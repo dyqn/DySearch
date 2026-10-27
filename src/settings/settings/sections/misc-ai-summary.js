@@ -34,6 +34,15 @@ import {
   getPromptGroups,
 } from "../../../shared/ai-summary-api.js";
 
+// 输入后 400ms 内就刷新/关掉设置页时，防抖定时器还没跑到，API Key 会静默丢掉。
+// 页面隐藏时补一次保存。只保留「最后一个」卡片的钩子：重新渲染出来的旧卡片
+// 手里是还没加载过的空 settings，让它保存会把已存的 Key 覆写成空。
+let flushPendingSettings = null;
+window.addEventListener("pagehide", () => flushPendingSettings?.());
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") flushPendingSettings?.();
+});
+
 export function createAiSummaryProviderCard() {
   const card = document.createElement("section");
   card.className = "other-settings-card ai-summary-card";
@@ -154,7 +163,17 @@ export function createAiSummaryProviderCard() {
 
   function schedulePersist() {
     clearTimeout(saveTimer);
-    saveTimer = setTimeout(() => { persistSettings(); }, 400);
+    saveTimer = setTimeout(() => {
+      saveTimer = null;
+      persistSettings();
+    }, 400);
+  }
+
+  function flushPendingPersist() {
+    if (saveTimer === null) return;
+    clearTimeout(saveTimer);
+    saveTimer = null;
+    persistSettings();
   }
 
   function getProviderAccent(providerId) {
@@ -439,6 +458,14 @@ export function createAiSummaryProviderCard() {
       showFeedback(msg("settings_aiSummaryNeedModel", "请先选择或填写模型名。"), true);
       return;
     }
+    // 「测试连接」即代表已保存：先落盘，再回读确认存储里真有这条 Key，
+    // 避免用户看到"连接成功"却在下一次打开时发现 Key 是空的。
+    await persistSettings();
+    const stored = await loadAiSummarySettings();
+    if (!stored.apiKeys?.[provider.id]) {
+      showFeedback(msg("settings_aiSummarySaveFail", "保存失败。"), true);
+      return;
+    }
     testBtn.disabled = true;
     testBtn.textContent = msg("settings_aiSummaryTesting", "测试中...");
     try {
@@ -454,6 +481,8 @@ export function createAiSummaryProviderCard() {
       testBtn.textContent = msg("settings_aiSummaryTestConn", "测试连接");
     }
   });
+
+  flushPendingSettings = flushPendingPersist;
 
   return card;
 }

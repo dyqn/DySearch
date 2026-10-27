@@ -12,7 +12,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Manifest-V3-blue?logo=googlechrome" alt="Manifest V3">
-  <img src="https://img.shields.io/badge/Version-1.0.0-green" alt="Version">
+  <img src="https://img.shields.io/badge/Version-1.0.1-green" alt="Version">
   <img src="https://img.shields.io/badge/License-GPL--3.0-blue" alt="License">
   <img src="https://img.shields.io/badge/Build-esbuild-orange" alt="Build Tool">
 </p>

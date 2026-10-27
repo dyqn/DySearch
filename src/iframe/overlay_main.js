@@ -18,6 +18,9 @@ const __DYSEARCH_IS_GROK_SUBFRAME__ = (() => {
   if (window.__DYSEARCH_FRAMEBUST_GUARD__) return;
   window.__DYSEARCH_FRAMEBUST_GUARD__ = true;
   if (window === window.top) return;
+  // 同样只针对我们自己的卡片 iframe；宿主页面里第三方嵌的 X/YouTube iframe
+  // （播放器、分享按钮）如果也被伪装顶层，功能会被打断。
+  if (window.name !== "dysearch-embed") return;
 
   // 这个 guard 会伪装 window.top / parent / frameElement，能拦住社媒类站点
   // 主动跳出 iframe，但对 Grok 这类重型 SPA 可能会破坏启动环境。

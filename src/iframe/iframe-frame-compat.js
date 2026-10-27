@@ -2,6 +2,10 @@
 // 并通过通用 MutationObserver 监控根元素被隐藏的行为，用 inline style 强制修复。
 (function () {
   if (window.parent === window) return;
+  // 只对「多元搜索」自己创建的卡片 iframe 生效（见 cards-render.js 里的 frameMarker）。
+  // 否则宿主页面里别人的 iframe（QQ 登录框、图形验证码等）也会被伪装成顶层窗口，
+  // 它们的 parent.postMessage / frameElement 握手会失效，导致登录后不跳转、验证码不显示。
+  if (window.name !== "dysearch-embed") return;
 
   try {
     Object.defineProperty(window, "parent", {

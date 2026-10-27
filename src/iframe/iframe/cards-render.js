@@ -265,6 +265,9 @@ export function createIframeBody(ref, options = {}) {
   const iframe = document.createElement("iframe");
   iframe.className = "ai-iframe";
   iframe.dataset.siteId = ref.site.id;
+  // iframe-frame-compat.js 靠这个名字认出「这是我们自己嵌的 AI 卡片」，
+  // 不给别人的 iframe（宿主页面里的登录框、验证码）做顶层伪装。
+  iframe.name = "dysearch-embed";
   iframe.loading = "eager";
   iframe.allow = ref.site.id === "grok"
     ? "clipboard-read; clipboard-write; autoplay; fullscreen; picture-in-picture"

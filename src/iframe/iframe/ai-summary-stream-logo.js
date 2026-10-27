@@ -1,0 +1,9 @@
+/** Brand mark — inline stream cursor (from icons/icon.svg, glyph only). */
+
+const SVG_W = 14;
+const SVG_H = 16;
+
+export const AI_STREAM_LOGO_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="55 55 180 180" fill="currentColor" width="${SVG_W}" height="${SVG_H}" aria-hidden="true">
+  <path d="M145 55C194.706 55 235 95.2944 235 145C235 162.846 229.805 179.478 220.846 193.468C217.565 191.886 213.886 191 210 191C196.193 191 185 202.193 185 216C185 219.107 185.568 222.081 186.604 224.825C174.16 231.324 160.01 235 145 235H75C63.9543 235 55 226.046 55 215V75C55 63.9543 63.9543 55 75 55H145ZM145 88C113.52 88 88 113.52 88 145C88 176.48 113.52 202 145 202C176.48 202 202 176.48 202 145C202 113.52 176.48 88 145 88Z"/>
+  <circle cx="210" cy="216" r="16"/>
+</svg>`;

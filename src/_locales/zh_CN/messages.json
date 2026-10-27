@@ -1,0 +1,8 @@
+{
+  "extensionName": {
+    "message": "多元搜索 - 一次提问多个AI与网站"
+  },
+  "extensionDescription": {
+    "message": "一次提问，多个AI与网站并行搜索、并排比较。数据只存本地；能否回答取决于各站点的登录状态与免费额度。"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "extensionName": {
+    "message": "Dysearch - Ask Multiple AI at Once"
+  },
+  "extensionDescription": {
+    "message": "Ask several AI sites at once and compare answers side by side. Data stays local; each site replies on its own quota."
+  }
+}

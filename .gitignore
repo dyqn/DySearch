@@ -1,0 +1,84 @@
+# Tool/editor generated metadata
+_metadata/
+.claude/
+.cursor/
+.playwright-mcp/
+codex-backups/
+baidu-test.png
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# Test artifacts
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Desktop generated native host launcher/manifest (local install)
+desktop/run-native-host.cmd
+desktop/run-native-host.sh
+desktop/native-host/
+
+# Release packages
+*.zip
+dysearch-*/
+make-zip.cjs
+
+# Experimental modules (local dev only)
+desktop/
+src/memory/
+src/desktop/
+src/settings/settings/sections/memory.js
+src/settings/settings/sections/memory-stub.js
+src/settings/settings/sections/memory-*.js
+src/settings/styles/12-memory.css
+src/settings/styles/12a-memory-ai-analysis.css
+src/settings/styles/12b-memory-usage.css
+src/settings/styles/12c-memory-control.css
+
+# Local dev docs (not for public repo)
+PROJECT_CONSTRAINTS.md
+docs/
+.github/
+
+# Local dev tooling & tests (not for public repo)
+tests/
+vitest.config.js
+playwright.config.js
+scripts/check-lines.mjs
+scripts/check-smoke-build.mjs
+scripts/pack-store.mjs
+scripts/zip-dist.py
+edge-baidu.png
+dysearch-2.png
+dysearch-open.png
+dysearch-overlay.png
+
+# Local dev scripts (probe-*/shot-* hardcode this machine's absolute paths);
+# the two packaging scripts are kept so a clone can rebuild the store package.
+tools/*
+!tools/make-store-zip.mjs
+!tools/build-privacy-page.mjs
+
+# Store submission working dir: package zip, screenshots, listing copy
+publish/
+
+# Stray file created by a mistyped redirect
+/%TEMP%
+
+# Editors and agent workspaces
+.vscode/
+.idea/
+.qoder/

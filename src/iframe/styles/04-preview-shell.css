@@ -1,0 +1,11 @@
+/* 预览卡片外壳（shared/prompt-item.js 驱动，与 popup 同步） */
+.dysearch-preview-shell {
+  position: fixed;
+  z-index: 2147483647;
+  display: none;
+  pointer-events: none;
+}
+.dysearch-preview-shell:not([hidden]) {
+  display: block;
+  pointer-events: auto;
+}

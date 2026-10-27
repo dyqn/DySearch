@@ -236,5 +236,5 @@ We may update this policy when features or compliance requirements change. The E
 For privacy-related inquiries:
 
 - **Email**: 1@dyqn.com
-- **Homepage**: [https://ss.dyqn.com](https://ss.dyqn.com)
+- **This policy online**: [https://dyqn.github.io/DySearch/privacy.html](https://dyqn.github.io/DySearch/privacy.html)
 - **Source code**: [https://github.com/dyqn/DySearch](https://github.com/dyqn/DySearch) — privacy questions can also be raised as an Issue there

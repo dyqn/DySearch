@@ -259,7 +259,7 @@
     settings_about_zeroDataBody: "Dysearch does not upload your search keywords, browsing history, or page content to developer servers. Functional configuration data is stored locally only.",
     settings_about_transparencyLabel: "Transparent interaction: ",
     settings_about_transparencyBody: "The extension opens target sites through iframes or New Tabs mode. Your login and interactions happen directly between your browser and the target site.",
-    settings_about_site: "Website",
+    settings_about_policy: "Privacy Policy",
     settings_about_source: "Source",
     settings_about_wechat: "WeChat account",
     settings_about_authorAria: "Author accounts",

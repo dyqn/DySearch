@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>多元搜索 Dysearch — Privacy Policy 隐私政策</title>
+<meta name="description" content="Privacy policy for the Dysearch browser extension: no developer-side collection, all settings stored locally, third-party data flows explained per permission." />
+<style>
+  :root { --ink:#1a1a1a; --muted:#5f6368; --line:#e3e5e8; --bg:#ffffff; --code:#f4f5f7; --accent:#111111; }
+  @media (prefers-color-scheme: dark) {
+    :root { --ink:#e8eaed; --muted:#9aa0a6; --line:#2c2f33; --bg:#17181a; --code:#22252a; --accent:#ffffff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:32px 20px 72px; background:var(--bg); color:var(--ink);
+    font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","Segoe UI Variable","Microsoft YaHei UI","Microsoft YaHei",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-text-size-adjust:100%; }
+  main { max-width:820px; margin:0 auto; }
+  h1 { font-size:28px; line-height:1.35; margin:0 0 4px; letter-spacing:.2px; }
+  h2 { font-size:22px; margin:44px 0 14px; padding-bottom:8px; border-bottom:1px solid var(--line); }
+  h3 { font-size:18px; margin:32px 0 10px; }
+  h4 { font-size:16px; margin:24px 0 8px; }
+  p { margin:12px 0; }
+  a { color:var(--ink); text-decoration:underline; text-underline-offset:2px; word-break:break-word; }
+  ul { margin:12px 0; padding-left:24px; }
+  li { margin:6px 0; }
+  code { background:var(--code); padding:2px 5px; border-radius:4px; font-size:.88em;
+    font-family:ui-monospace,SFMono-Regular,Consolas,"Cascadia Mono",Menlo,monospace; word-break:break-word; }
+  hr { border:0; border-top:1px solid var(--line); margin:32px 0; }
+  blockquote { margin:16px 0; padding:12px 16px; border-left:3px solid var(--accent); background:var(--code); }
+  blockquote p { margin:0; }
+  table { width:100%; border-collapse:collapse; margin:16px 0; font-size:15px; }
+  th, td { border:1px solid var(--line); padding:8px 10px; text-align:left; vertical-align:top; }
+  th { background:var(--code); font-weight:600; }
+  .tw { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+  .langbar { display:flex; gap:8px; margin:0 0 28px; font-size:14px; }
+  .langbar a { padding:5px 14px; border:1px solid var(--line); border-radius:999px; text-decoration:none; }
+  .langbar a:hover { background:var(--accent); color:var(--bg); border-color:var(--accent); }
+  .lead { color:var(--muted); font-size:15px; margin:0 0 24px; }
+  .zh { }
+  .en { margin-top:40px; }
+  .note { color:var(--muted); font-size:13.5px; }
+  footer { margin-top:48px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:13.5px; }
+  @media (max-width:560px) { body { padding:24px 16px 56px; } h1 { font-size:24px; } }
+  @media print { body { background:#fff; color:#000; } .langbar { display:none; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>多元搜索 Dysearch · Privacy Policy</h1>
+  <p class="lead">浏览器扩展「多元搜索 / Dysearch」的隐私政策 · Privacy policy for the Dysearch browser extension</p>
+  <nav class="langbar">
+    <a href="#zh">中文要点</a>
+    <a href="#en">Full policy (English)</a>
+  </nav>
+
+  <section id="zh" class="zh" lang="zh-CN">
+    <h2>中文要点（便于快速阅读）</h2>
+    <blockquote><p>以下是英文正文的要点摘要，内容与英文正文一致；若表述有出入，以英文完整条款为准。</p></blockquote>
+    <ul>
+      <li><strong>开发者不收集数据</strong>：没有账号体系、没有自建后端、没有第三方统计 / 广告 / 追踪 SDK，也不会把你的输入内容、浏览记录、账号信息或页面内容发送到开发者控制的服务器。      <li><strong>配置只存在你本机</strong>：搜索组、自定义站点、提示词库、搜索历史、快捷入口、界面偏好，以及你填写的 AI 总结 API Key，全部保存在浏览器本地存储（<code>chrome.storage.local</code>）中；扩展不提供开发者侧云同步。      <li><strong>你主动触发时，数据会直达第三方</strong>：提问时你的搜索词由你的浏览器直接发给你选中的 AI / 网站；开启 AI 总结后，页面提取出的正文会直接发往<strong>你自己配置的</strong> API 服务商。“不上传开发者服务器”不等于“第三方看不到”。      <li><strong>内容提取只在你点击导出 / 复制 / 总结时发生</strong>，处理在你的浏览器本地完成，不上传。      <li><strong>预热门请求是可选项</strong>，只直连目标站点，可在设置里关闭。      <li><strong>为了把站点显示在卡片里</strong>：部分 AI 站点禁止被内嵌，扩展会删除其阻止内嵌的响应头，并在该 iframe 内把 <code>window.parent</code>、<code>window.top</code>、<code>document.frameElement</code> 报成普通页面。它只服务于<strong>你主动打开</strong>的页面，不用于伪装来源、不用于刷量、不用于绕过任何站点的登录 / 付费 / 用量限制。      <li><strong>权限最小必要</strong>：<code>storage</code>、<code>tabs</code>、<code>windows</code>、<code>alarms</code>、<code>declarativeNetRequest</code>、<code>contextMenus</code> 与 <code>host_permissions: &lt;all_urls&gt;</code>，逐条用途见英文正文第 9 节。      <li><strong>更新不会清空你的数据</strong>；卸载扩展时浏览器会移除它的本地存储。      <li><strong>不面向 13 岁以下儿童</strong>。      <li><strong>联系方式</strong>：邮箱 1@dyqn.com；本政策网页版 <a href="https://dyqn.github.io/DySearch/privacy.html" target="_blank" rel="noopener noreferrer">https://dyqn.github.io/DySearch/privacy.html</a>；开源地址 <a href="https://github.com/dyqn/DySearch" target="_blank" rel="noopener noreferrer">https://github.com/dyqn/DySearch</a>。    </ul>
+  </section>
+
+  <hr />
+
+  <section id="en" class="en" lang="en">
+    <h2>Dysearch Privacy Policy</h2>
+    <p><strong>Effective Date:</strong> 2026-10-24<br /> <strong>Applies to:</strong> Dysearch browser extension version <strong>1.0.0</strong> and later</p>
+    <p>Dysearch is a locally-running browser extension that opens multiple AI/search sites side by side in a single page. When you explicitly trigger an action, it helps you fill in the same query into the input fields of those sites and submit them, so you can compare results easily.</p>
+    <p>This policy applies to the Dysearch browser extension (hereinafter referred to as "the Extension").</p>
+    <hr />
+    <h3>1. What Information Do We Collect?</h3>
+    <p><strong>We do not collect, operate, or upload any personal or device information to developer-controlled servers.</strong></p>
+    <p>Specifically, the Extension:</p>
+    <ul>
+      <li>Does not provide an account login/registration system with the developer      <li>Does not connect to any self-built backend service operated by the developer      <li>Does not include third-party analytics, advertising, or tracking SDKs      <li>Does not send your input content, browsing history, account information, or page content to any developer-controlled server    </ul>
+    <p><strong>Important distinction:</strong> Features you choose to use may still send data <strong>directly from your browser</strong> to <strong>third-party websites or AI API providers</strong> (see Sections 4, 5, and 6). That is not collection by the developer, but you should review those third parties' privacy policies.</p>
+    <hr />
+    <h3>2. Does the Extension Share Information with Third Parties?</h3>
+    <p><strong>The developer does not sell, rent, or transfer your locally stored data to advertising platforms, data brokers, or other organizations.</strong></p>
+    <p>However, when <strong>you explicitly trigger</strong> certain features, your browser may send data <strong>directly</strong> to third parties:</p>
+    <div class="tw">
+    <table>
+      <thead><tr><th>Triggered by you</th><th>Sent to</th><th>Not sent to developer server</th></tr></thead>
+      <tbody>
+      <tr><td>Search / send query</td><td>AI/search sites you selected (e.g., ChatGPT, DeepSeek)</td><td>Yes</td></tr>
+      <tr><td>AI one-click summary (after you enter an API Key)</td><td>The AI provider you configured (e.g., DeepSeek, Kimi, OpenRouter)</td><td>Yes</td></tr>
+      <tr><td>Pre-warming (optional, can be disabled)</td><td>Built-in target sites</td><td>Yes</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>The developer does not receive, store, or process the content of those requests on its own servers.</p>
+    <hr />
+    <h3>3. What Does the Extension Store Locally? (Local Only)</h3>
+    <p>To provide its features, the Extension stores configuration and usage data in your browser's local storage (e.g., <code>chrome.storage.local</code>), which may include but is not limited to:</p>
+    <ul>
+      <li><strong>Search groups &amp; custom sites</strong>: Enabled sites, group layout, and custom URL templates you add      <li><strong>Prompt library</strong>: Prompt groups and prompt text you create, edit, or import      <li><strong>Search history (optional)</strong>: Past queries and comparison sessions for review within the Extension      <li><strong>Quick-access sites</strong>: Sites pinned for fast access in the overlay / global search bar      <li><strong>Selection context groups</strong>: Right-click menu entries that attach a prompt to selected text      <li><strong>AI summary settings (optional)</strong>: Provider choice, model names, summary prompt templates, and <strong>API Keys you enter</strong> — stored locally only      <li><strong>UI preferences</strong>: Layout, card size, dark mode, shortcut keys, overlay/context-menu toggles, pre-warm setting, etc.      <li><strong>Import/export files</strong>: When you export settings to a JSON file, the file is saved to a location you choose on your device; the developer does not receive it    </ul>
+    <p>All of the above is <strong>stored locally on your device only</strong>. The Extension does not provide cloud sync by the developer. If you use your browser's own sync, that behavior is governed by your browser/account provider.</p>
+    <p><strong>Sensitive data note:</strong> API Keys you enter for AI summary are stored locally like other settings. Protect your device and avoid sharing exported JSON files that contain keys.</p>
+    <hr />
+    <h3>4. Interaction with Third-Party Websites (Only When You Trigger It)</h3>
+    <p>When you use the Extension to open an AI or search site, your browser directly accesses those sites. They may process your data (login status, cookies, content you submit) under their own privacy policies.</p>
+    <p>Core interactions:</p>
+    <ul>
+      <li><strong>Side-by-side loading</strong>: Selected sites load in iframes/cards inside the Extension's compare page      <li><strong>Auto-fill and submit</strong>: When you click Send (or equivalent), your input is written into the target site's field and submitted <strong>from your browser to that site</strong>      <li><strong>On-site prompt launcher (optional)</strong>: On supported AI sites, a small Dysearch entry may appear near the input box so you can open your prompt library. This runs locally in the page context and does not upload data to the developer      <li><strong>Selection search bubble (optional, off by default)</strong>: When enabled, selecting text on a page may show a Dysearch bubble; using it sends the selected text to sites you configured — same as typing in the popup    </ul>
+    <blockquote><p><strong>Important:</strong> "Not uploaded to the developer's server" does <strong>not</strong> mean your query stays private on the internet. When you send a query to a third-party site, that site receives it.</p></blockquote>
+    <hr />
+    <h3>5. Content Extraction (Export / Copy — Local Processing)</h3>
+    <p>When you use <strong>Export</strong> or <strong>Copy</strong> on the compare page, the Extension may extract readable text from open target pages to build Markdown or clipboard content.</p>
+    <ul>
+      <li><strong>Trigger</strong>: Only when you perform export/copy — no background collection      <li><strong>Processing</strong>: Done locally in your browser      <li><strong>Upload</strong>: Not sent to the developer's server    </ul>
+    <hr />
+    <h3>6. AI One-Click Summary (Optional — Third-Party API)</h3>
+    <p>When you configure an AI summary provider and API Key in Settings, you can summarize extracted multi-model answers on the compare page.</p>
+    <ul>
+      <li><strong>Trigger</strong>: Only when you click to run AI summary      <li><strong>What is sent</strong>: The Extension builds a text payload from extracted compare-page content (and your configured summary prompt) and sends it <strong>directly from your browser</strong> to the <strong>third-party API endpoint</strong> you chose (e.g., DeepSeek, Kimi, OpenRouter, SiliconFlow, Zhipu, or a custom OpenAI-compatible URL)      <li><strong>API Key</strong>: Stored locally; sent only in the <code>Authorization</code> header to your chosen provider — <strong>not</strong> to the developer's server      <li><strong>Developer role</strong>: The developer does not proxy, log, or store these requests on its own infrastructure    </ul>
+    <p>Please review your chosen AI provider's terms and privacy policy before entering an API Key or sending sensitive content.</p>
+    <hr />
+    <h3>7. Pre-warming Requests (Optional — Can Be Disabled)</h3>
+    <p>To reduce initial load time for some heavy sites, the Extension may send lightweight <strong>pre-warming requests</strong> to certain built-in sites when you open the popup or overlay.</p>
+    <ul>
+      <li><strong>Trigger</strong>: Local, on extension use; can be disabled in Settings → Other      <li><strong>Data</strong>: Requests go directly to target sites; no upload to the developer's server    </ul>
+    <hr />
+    <h3>8. Config Import / Export (Local Files)</h3>
+    <p>Settings allow you to export selected modules (search groups, custom sites, quick-access sites, selection context groups, AI summary settings) to a JSON file, and import them later.</p>
+    <ul>
+      <li><strong>Scope</strong>: You choose what to export/import      <li><strong>Storage</strong>: Files remain on your device unless you share them yourself      <li><strong>Overwrite</strong>: Import replaces only the modules you select — it does not automatically clear unrelated local data such as search history unless that module is included    </ul>
+    <hr />
+    <h3>9. Permissions and Usage (Item by Item)</h3>
+    <p>The Extension follows a minimum-necessary permission model. Permissions in the <strong>1.0.0 release</strong> include:</p>
+    <h4>9.1 <code>storage</code></h4>
+    <ul>
+      <li><strong>Purpose</strong>: Persist groups, prompts, history, preferences, optional API Keys, and related settings locally      <li><strong>Data flow</strong>: Local only    </ul>
+    <h4>9.2 <code>tabs</code></h4>
+    <ul>
+      <li><strong>Purpose</strong>: Open/coordinate compare pages, site tabs, and tab state needed for user-triggered search/send flows      <li><strong>Data flow</strong>: Local only    </ul>
+    <h4>9.3 <code>windows</code></h4>
+    <ul>
+      <li><strong>Purpose</strong>: Open the Extension popup UI in a small window when keyboard shortcuts cannot use the toolbar popup (e.g., on restricted pages such as <code>chrome://</code>)      <li><strong>Data flow</strong>: Local UI only; no data upload    </ul>
+    <h4>9.4 <code>declarativeNetRequest</code></h4>
+    <ul>
+      <li><strong>Purpose</strong>: Apply declarative rules (e.g., adjust response headers like <code>content-security-policy</code> / <code>x-frame-options</code>) so selected third-party sites can render inside compare-page iframe cards      <li><strong>Data flow</strong>: Local network stack only; not forwarded to the developer    </ul>
+    <p><strong>Related: the frame-compatibility script (<code>iframe/iframe-frame-compat.js</code>)</strong></p>
+    <p>Some AI sites detect that they were opened inside a frame and refuse to render, which would leave the card you asked for blank. To keep those cards usable, a small script runs in the page context of frames and:</p>
+    <ul>
+      <li>Removes the frame-blocking response headers listed above, through the declarative rules      <li>Makes <code>window.parent</code>, <code>window.top</code> and <code>document.frameElement</code> report the frame as a normal top-level page, so the site no longer hides itself      <li>Restores the site's root container to a visible size if a site script collapsed it      <li>On the Qwen/Qianwen frames only, stops that site from repeatedly opening its own pop-up windows and removes a loading skeleton it leaves on screen, so the card stops spawning tabs    </ul>
+    <p>Scope and limits, stated plainly:</p>
+    <ul>
+      <li>This exists only so that a page <strong>you</strong> chose to open stays visible inside the Extension's compare page.      <li>It is <strong>not</strong> used to disguise where a frame came from, to show you content you did not ask for, to spoof ad impressions or votes, or to bypass any site's login, payment or usage limits.      <li>The script is registered for all URLs because you can add any website as a custom search site; on every top-level page it exits immediately, and it only applies inside a frame.    </ul>
+    <h4>9.5 <code>host_permissions: &lt;all_urls&gt;</code> (and matching content scripts)</h4>
+    <ul>
+      <li><strong>Purpose</strong>: Run content scripts on pages you visit to:
+        <ul>
+          <li>Show/hide the Ctrl+Q overlay</li>
+          <li>Find input fields, fill text, and trigger send</li>
+          <li>Show optional selection-search bubble (when enabled)</li>
+          <li>Extract readable text when you export/copy/summarize</li>
+          <li>Support user-defined custom site URLs</li>
+        </ul>
+      </li>
+      <li><strong>Why all URLs</strong>: Custom sites and varied AI/search domains require on-page automation; scripts run only in your browser      <li><strong>Data flow</strong>: Local execution; not uploaded to the developer    </ul>
+    <h4>9.6 <code>commands</code> (keyboard shortcuts)</h4>
+    <ul>
+      <li><strong>Purpose</strong>: Invoke the overlay or popup entry via shortcuts (default: <code>Ctrl+Q</code>)      <li><strong>Data flow</strong>: Local only    </ul>
+    <h4>9.7 <code>alarms</code></h4>
+    <ul>
+      <li><strong>Purpose</strong>: Keep the MV3 service worker responsive (e.g., context menu rebuild, shortcut sync) via periodic local wake-ups — timers only, no outbound data      <li><strong>Data flow</strong>: Local only    </ul>
+    <h4>9.8 <code>contextMenus</code></h4>
+    <ul>
+      <li><strong>Purpose</strong>: Add Dysearch entries when you select text — search groups, quick-access sites, and optional prompt-attached context groups      <li><strong>Data flow</strong>: Selected text is processed locally and sent <strong>only to sites you configured</strong>, directly from your browser    </ul>
+    <hr />
+    <h3>10. Updates and Existing Local Data</h3>
+    <p>When you update the Extension through the browser store, your existing local data (prompts, search history, groups, settings, etc.) is generally <strong>retained</strong> by the browser in <code>chrome.storage.local</code>.</p>
+    <p>Built-in default presets apply only when corresponding data is <strong>missing</strong> on first install. Updating does <strong>not</strong> reset your prompts or history to factory defaults.</p>
+    <p>Uninstalling the Extension typically removes its local storage.</p>
+    <hr />
+    <h3>11. Data Security</h3>
+    <p>Because the developer does not operate a centralized data store for Extension usage, there is no developer-side database breach surface for your Extension data.</p>
+    <p>Your local data security depends on your device, OS account, browser profile, and which third-party sites/APIs you use.</p>
+    <p>We recommend:</p>
+    <ul>
+      <li>Install only from trusted sources (e.g., Chrome Web Store)      <li>Keep your browser and extensions updated      <li>Treat API Keys like passwords; do not share exported JSON containing keys      <li>Be cautious submitting sensitive content to third-party AI/search sites or summary APIs    </ul>
+    <hr />
+    <h3>12. Your Rights and Choices</h3>
+    <p>You may at any time:</p>
+    <ul>
+      <li><strong>View and manage data</strong> in the Extension settings (groups, prompts, shortcuts, AI summary, etc.)      <li><strong>Disable optional features</strong>: pre-warming, context menu, selection bubble, on-site prompt launcher, etc.      <li><strong>Clear or remove data</strong>: use in-app clear options where available, import/export to backup, uninstall the Extension, or delete extension data via browser settings      <li><strong>Restrict permissions</strong>: adjust site access in the browser's extension management page    </ul>
+    <hr />
+    <h3>13. Children's Privacy</h3>
+    <p>This Extension is not directed at children under 13. The developer does not knowingly collect personal information from children through its own servers. Minors should use the Extension with parental guidance and understand that third-party sites they interact with have their own policies.</p>
+    <hr />
+    <h3>14. How This Policy Is Updated</h3>
+    <p>We may update this policy when features or compliance requirements change. The Effective Date at the top will be revised accordingly. Material changes will be noted in release notes or on the extension listing where applicable.</p>
+    <hr />
+    <h3>15. Contact</h3>
+    <p>For privacy-related inquiries:</p>
+    <ul>
+      <li><strong>Email</strong>: 1@dyqn.com      <li><strong>This policy online</strong>: <a href="https://dyqn.github.io/DySearch/privacy.html" target="_blank" rel="noopener noreferrer">https://dyqn.github.io/DySearch/privacy.html</a>      <li><strong>Source code</strong>: <a href="https://github.com/dyqn/DySearch" target="_blank" rel="noopener noreferrer">https://github.com/dyqn/DySearch</a> — privacy questions can also be raised as an Issue there    </ul>
+  </section>
+
+  <footer lang="zh-CN">
+    <p>本页面不含任何脚本，不加载外部资源，不放置 Cookie，也不做任何访问统计。<br />
+    This page contains no scripts, loads no external resources, sets no cookies, and performs no analytics.</p>
+    <p class="note">Source of truth: <code>PRIVACY.md</code> shipped inside the extension package — this page is generated from that file, so the two stay in sync.</p>
+  </footer>
+</main>
+</body>
+</html>

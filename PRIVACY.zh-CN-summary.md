@@ -11,4 +11,4 @@
 - **权限最小必要**：`storage`、`tabs`、`windows`、`alarms`、`declarativeNetRequest`、`contextMenus` 与 `host_permissions: <all_urls>`，逐条用途见英文正文第 9 节。
 - **更新不会清空你的数据**；卸载扩展时浏览器会移除它的本地存储。
 - **不面向 13 岁以下儿童**。
-- **联系方式**：邮箱 1@dyqn.com；官网 [https://ss.dyqn.com](https://ss.dyqn.com)；开源地址 [https://github.com/dyqn/DySearch](https://github.com/dyqn/DySearch)。
+- **联系方式**：邮箱 1@dyqn.com；本政策网页版 [https://dyqn.github.io/DySearch/privacy.html](https://dyqn.github.io/DySearch/privacy.html)；开源地址 [https://github.com/dyqn/DySearch](https://github.com/dyqn/DySearch)。

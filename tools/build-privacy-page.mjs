@@ -1,10 +1,12 @@
-// Builds publish/privacy.html from PRIVACY.md (English body) + PRIVACY.zh-CN-summary.md.
+// Builds docs/privacy.html from PRIVACY.md (English body) + PRIVACY.zh-CN-summary.md.
+// docs/ is served by GitHub Pages, so the policy is reachable at
+// https://dyqn.github.io/DySearch/privacy.html once Pages is enabled on branch main / docs.
 // Run: node tools/build-privacy-page.mjs
 import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
-const OUT_DIR = path.join(ROOT, "publish");
+const OUT_DIR = path.join(ROOT, "docs");
 const OUT = path.join(OUT_DIR, "privacy.html");
 
 function escapeHtml(text) {
@@ -204,6 +206,9 @@ ${english}
 
 fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(OUT, html, "utf8");
+// Pages would otherwise run the file through Jekyll and drop nothing here, but
+// .nojekyll keeps the build a plain static serve and makes deployment immediate.
+fs.writeFileSync(path.join(OUT_DIR, ".nojekyll"), "", "utf8");
 
 const checks = {
   bytes: Buffer.byteLength(html),

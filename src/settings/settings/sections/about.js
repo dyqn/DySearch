@@ -21,7 +21,7 @@ export function renderAboutSection() {
   const actions = document.createElement("div");
   actions.className = "about-plugin-actions";
   actions.innerHTML = `
-    <a class="about-plugin-action-btn" href="https://ss.dyqn.com" target="_blank" rel="noopener noreferrer">${msg("settings_about_site", "插件官网")}</a>
+    <a class="about-plugin-action-btn" href="https://dyqn.github.io/DySearch/privacy.html" target="_blank" rel="noopener noreferrer">${msg("settings_about_policy", "隐私政策")}</a>
     <a class="about-plugin-action-btn" href="https://github.com/dyqn/DySearch" target="_blank" rel="noopener noreferrer">${msg("settings_about_source", "开源地址")}</a>
     <div class="about-plugin-action-btn about-plugin-wechat-host" tabindex="0" aria-label="${msg("settings_about_wechat", "作者公众号")}">
       <span>${msg("settings_about_wechat", "作者公众号")}</span>

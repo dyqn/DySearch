@@ -50,7 +50,10 @@ src/settings/styles/12c-memory-control.css
 
 # Local dev docs (not for public repo)
 PROJECT_CONSTRAINTS.md
-docs/
+# docs/ stays local except the two files GitHub Pages serves as the privacy policy.
+docs/*
+!docs/.nojekyll
+!docs/privacy.html
 .github/
 
 # Local dev tooling & tests (not for public repo)

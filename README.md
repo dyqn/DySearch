@@ -12,7 +12,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Manifest-V3-blue?logo=googlechrome" alt="Manifest V3">
-  <img src="https://img.shields.io/badge/Version-1.0.1-green" alt="Version">
+  <img src="https://img.shields.io/badge/Version-1.0.2-green" alt="Version">
   <img src="https://img.shields.io/badge/License-GPL--3.0-blue" alt="License">
   <img src="https://img.shields.io/badge/Build-esbuild-orange" alt="Build Tool">
 </p>
@@ -21,12 +21,6 @@
   <a href="PRIVACY.md">隐私政策</a> ·
   <a href="LICENSE">开源协议</a>
 </p>
-
----
-
-## 项目来源
-
-多元搜索（Dysearch）基于开源项目 [Qshot](https://github.com/30bewater/Qshot) v1.1.5（GPL-3.0）二次开发，继续沿用 GPL-3.0 协议开源。
 
 ---
 
@@ -128,6 +122,10 @@ dysearch/
 ### 开源协议
 
 本项目采用 [GPL-3.0](LICENSE)。
+
+## 致谢
+
+多元搜索（Dysearch）基于开源项目 [Qshot](https://github.com/30bewater/Qshot) v1.1.5（GPL-3.0）二次开发，继续沿用 GPL-3.0 协议开源。
 
 ---
 

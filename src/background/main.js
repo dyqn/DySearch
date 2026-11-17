@@ -29,11 +29,21 @@ function centeredOn(win, size) {
 }
 
 /**
- * 受限页（chrome://、空新标签页、商店页…）注入不了页内浮层，用居中的独立窗口承载同一套搜索面板。
- * 工具栏气泡贴在图标下方，和这些页面的空画面错位；独立窗口能落在正中。
- * chrome.windows.create 失败时才退回气泡 / 新标签页，否则快捷键看起来「没反应」。
+ * 受限页（chrome://、空新标签页、商店页…）注入不了页内浮层。
+ * 首选工具栏气泡：和点图标打开的是同一个弹窗，位置就贴在图标下面。
+ * openPopup 只在 Chrome 127+ 有、且必须在用户手势里调用，失败就退回独立窗口
+ * （放屏幕正中），再不行开一个标签页——总得看见点动静，别让人以为快捷键坏了。
  */
 async function openExtensionComposerUi(windowId) {
+  if (typeof chrome.action?.openPopup === "function") {
+    try {
+      await chrome.action.openPopup(typeof windowId === "number" ? { windowId } : {});
+      return;
+    } catch (_e) {
+      /* 继续兜底 */
+    }
+  }
+
   const anchor = await chrome.windows.get(windowId).catch(() => null);
   const windows = await chrome.windows.getAll().catch(() => []);
   const existing = windows.find((w) => (w.url || "").startsWith(COMPOSER_WINDOW_URL));
@@ -59,15 +69,6 @@ async function openExtensionComposerUi(windowId) {
     /* 继续兜底 */
   }
 
-  if (typeof chrome.action?.openPopup === "function") {
-    try {
-      const opts = typeof windowId === "number" ? { windowId } : undefined;
-      await chrome.action.openPopup(opts);
-      return;
-    } catch (_e) {
-      /* 继续兜底 */
-    }
-  }
   try {
     await chrome.tabs.create({ url: POPUP_PAGE_URL, active: true });
   } catch (_e2) {
